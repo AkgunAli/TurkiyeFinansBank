@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7AAC3508F70555CEC29ECAD6 /* Pods_TurkiyeFinansBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FBD443F839E5FC127005815 /* Pods_TurkiyeFinansBank.framework */; };
 		802F469327A7FC3C0053E637 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802F469227A7FC3C0053E637 /* AppDelegate.swift */; };
 		802F469527A7FC3C0053E637 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802F469427A7FC3C0053E637 /* SceneDelegate.swift */; };
 		802F469727A7FC3C0053E637 /* ApplicationListPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802F469627A7FC3C0053E637 /* ApplicationListPageVC.swift */; };
@@ -19,9 +20,18 @@
 		802F46B727A81C9D0053E637 /* ApplicationListPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802F46B627A81C9D0053E637 /* ApplicationListPageVM.swift */; };
 		802F46B927A81CA50053E637 /* ApplicationDetailPageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802F46B827A81CA50053E637 /* ApplicationDetailPageVM.swift */; };
 		802F46BC27A82C8C0053E637 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802F46BB27A82C8C0053E637 /* TableViewExtension.swift */; };
+		80CB812727AEB4E0009BCC65 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB812627AEB4E0009BCC65 /* Endpoints.swift */; };
+		80CB812927AEB4EF009BCC65 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB812827AEB4EF009BCC65 /* Service.swift */; };
+		80CB812E27AEB576009BCC65 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB812D27AEB576009BCC65 /* Constant.swift */; };
+		80CB813027AEB595009BCC65 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB812F27AEB595009BCC65 /* DictionaryExtensions.swift */; };
+		80CB813227AEB602009BCC65 /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB813127AEB602009BCC65 /* DoubleExtensions.swift */; };
+		80CB813427AEB656009BCC65 /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB813327AEB656009BCC65 /* SearchAPI.swift */; };
+		80CB813627AEB70D009BCC65 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB813527AEB70D009BCC65 /* BaseModel.swift */; };
+		80CB813827AEB7F0009BCC65 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB813727AEB7F0009BCC65 /* ContentModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FBD443F839E5FC127005815 /* Pods_TurkiyeFinansBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TurkiyeFinansBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		802F468F27A7FC3C0053E637 /* TurkiyeFinansBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TurkiyeFinansBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		802F469227A7FC3C0053E637 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		802F469427A7FC3C0053E637 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +46,16 @@
 		802F46B627A81C9D0053E637 /* ApplicationListPageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationListPageVM.swift; sourceTree = "<group>"; };
 		802F46B827A81CA50053E637 /* ApplicationDetailPageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDetailPageVM.swift; sourceTree = "<group>"; };
 		802F46BB27A82C8C0053E637 /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
+		80CB812627AEB4E0009BCC65 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		80CB812827AEB4EF009BCC65 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		80CB812D27AEB576009BCC65 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		80CB812F27AEB595009BCC65 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
+		80CB813127AEB602009BCC65 /* DoubleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtensions.swift; sourceTree = "<group>"; };
+		80CB813327AEB656009BCC65 /* SearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
+		80CB813527AEB70D009BCC65 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		80CB813727AEB7F0009BCC65 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
+		A3B69032E03E6F8206EFE032 /* Pods-TurkiyeFinansBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TurkiyeFinansBank.release.xcconfig"; path = "Target Support Files/Pods-TurkiyeFinansBank/Pods-TurkiyeFinansBank.release.xcconfig"; sourceTree = "<group>"; };
+		FC1C9801807B79AFE69C94FD /* Pods-TurkiyeFinansBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TurkiyeFinansBank.debug.xcconfig"; path = "Target Support Files/Pods-TurkiyeFinansBank/Pods-TurkiyeFinansBank.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +63,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AAC3508F70555CEC29ECAD6 /* Pods_TurkiyeFinansBank.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		618A11894F0D9683F8ADAC28 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC1C9801807B79AFE69C94FD /* Pods-TurkiyeFinansBank.debug.xcconfig */,
+				A3B69032E03E6F8206EFE032 /* Pods-TurkiyeFinansBank.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		802F468627A7FC3C0053E637 = {
 			isa = PBXGroup;
 			children = (
 				802F469127A7FC3C0053E637 /* TurkiyeFinansBank */,
 				802F469027A7FC3C0053E637 /* Products */,
+				618A11894F0D9683F8ADAC28 /* Pods */,
+				E5462AB9955CD7F964926E08 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +133,9 @@
 		802F46A827A813BF0053E637 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				80CB812527AEB4D0009BCC65 /* Models */,
+				80CB812427AEB4CA009BCC65 /* Service */,
+				80CB812327AEB4C1009BCC65 /* Endpoints */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -108,6 +143,7 @@
 		802F46A927A813C90053E637 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				80CB812B27AEB55E009BCC65 /* Constant */,
 				802F46BA27A82C7E0053E637 /* Extensions */,
 			);
 			path = Support;
@@ -161,8 +197,60 @@
 			isa = PBXGroup;
 			children = (
 				802F46BB27A82C8C0053E637 /* TableViewExtension.swift */,
+				80CB812F27AEB595009BCC65 /* DictionaryExtensions.swift */,
+				80CB813127AEB602009BCC65 /* DoubleExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		80CB812327AEB4C1009BCC65 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				80CB812627AEB4E0009BCC65 /* Endpoints.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		80CB812427AEB4CA009BCC65 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				80CB812A27AEB4F3009BCC65 /* API */,
+				80CB812827AEB4EF009BCC65 /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		80CB812527AEB4D0009BCC65 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				80CB813527AEB70D009BCC65 /* BaseModel.swift */,
+				80CB813727AEB7F0009BCC65 /* ContentModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		80CB812A27AEB4F3009BCC65 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				80CB813327AEB656009BCC65 /* SearchAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		80CB812B27AEB55E009BCC65 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				80CB812D27AEB576009BCC65 /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		E5462AB9955CD7F964926E08 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FBD443F839E5FC127005815 /* Pods_TurkiyeFinansBank.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,9 +260,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 802F46A327A7FC3F0053E637 /* Build configuration list for PBXNativeTarget "TurkiyeFinansBank" */;
 			buildPhases = (
+				B7B0AB6DBD8835EB26078102 /* [CP] Check Pods Manifest.lock */,
 				802F468B27A7FC3C0053E637 /* Sources */,
 				802F468C27A7FC3C0053E637 /* Frameworks */,
 				802F468D27A7FC3C0053E637 /* Resources */,
+				CEE50EFB5562766C87AAA518 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,6 +321,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B7B0AB6DBD8835EB26078102 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TurkiyeFinansBank-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEE50EFB5562766C87AAA518 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TurkiyeFinansBank/Pods-TurkiyeFinansBank-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TurkiyeFinansBank/Pods-TurkiyeFinansBank-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TurkiyeFinansBank/Pods-TurkiyeFinansBank-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		802F468B27A7FC3C0053E637 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -243,7 +375,15 @@
 				802F46B727A81C9D0053E637 /* ApplicationListPageVM.swift in Sources */,
 				802F469327A7FC3C0053E637 /* AppDelegate.swift in Sources */,
 				802F469527A7FC3C0053E637 /* SceneDelegate.swift in Sources */,
+				80CB812927AEB4EF009BCC65 /* Service.swift in Sources */,
+				80CB813427AEB656009BCC65 /* SearchAPI.swift in Sources */,
+				80CB813827AEB7F0009BCC65 /* ContentModel.swift in Sources */,
+				80CB813627AEB70D009BCC65 /* BaseModel.swift in Sources */,
+				80CB812E27AEB576009BCC65 /* Constant.swift in Sources */,
+				80CB813227AEB602009BCC65 /* DoubleExtensions.swift in Sources */,
+				80CB812727AEB4E0009BCC65 /* Endpoints.swift in Sources */,
 				802F46B327A81B620053E637 /* DocumentListCell.swift in Sources */,
+				80CB813027AEB595009BCC65 /* DictionaryExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,10 +527,13 @@
 		};
 		802F46A427A7FC3F0053E637 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC1C9801807B79AFE69C94FD /* Pods-TurkiyeFinansBank.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TurkiyeFinansBank/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -398,6 +541,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = AliAkgun.TurkiyeFinansBank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -405,10 +549,13 @@
 		};
 		802F46A527A7FC3F0053E637 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3B69032E03E6F8206EFE032 /* Pods-TurkiyeFinansBank.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TurkiyeFinansBank/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -416,6 +563,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = AliAkgun.TurkiyeFinansBank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

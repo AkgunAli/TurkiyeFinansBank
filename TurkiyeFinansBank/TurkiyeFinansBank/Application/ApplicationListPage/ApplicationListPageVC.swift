@@ -16,18 +16,14 @@ class ApplicationListPageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel.documentsResponse.append(Documents(documentName: "başlık1", documentModelName: ["Test2","Test3"]))
-        viewModel.documentsResponse.append(Documents(documentName: "başlık2", documentModelName: ["Test5","Test6"]))
-        viewModel.documentsResponse.append(Documents(documentName: "başlık3", documentModelName: ["Test5","Test6"]))
-        viewModel.documentsResponse.append(Documents(documentName: "başlık4", documentModelName: ["Test5","Test6"]))
-        
         searchBar.delegate = self
         viewModel.filteredData = viewModel.documentsResponse
         viewModel.dataCopy = viewModel.documentsResponse
         
         tableView.register(UINib(nibName: DocumentListCell().nibName, bundle: nil), forCellReuseIdentifier: DocumentListCell().nibName)
-        title = "Component List Page"
-
+        title = viewModel.title
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
 }
 
@@ -44,26 +40,23 @@ extension ApplicationListPageVC : UITableViewDelegate,UITableViewDataSource {
         return viewModel.filteredData.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return viewModel.filteredData.count
-        return viewModel.filteredData[section].documentModelName?.count ?? 0
+        viewModel.filteredData[section].documentModelName.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell  = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-////        cell.textLabel?.text = viewModel.documentsResponse[indexPath.section].documentModelName?[indexPath.row]
-//        cell.textLabel?.text = viewModel.filteredData[indexPath.section].documentModelName?[indexPath.row]
-//        cell.selectionStyle = UITableViewCell.SelectionStyle.none
-//
-//
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DocumentListCell", for:indexPath) as! DocumentListCell
 
-        cell.artistName.text = viewModel.filteredData[indexPath.section].documentModelName?[indexPath.row]
-        cell.artistType.text = viewModel.filteredData[indexPath.section].documentModelName?[indexPath.row]
-        cell.artistKind.text = viewModel.filteredData[indexPath.section].documentModelName?[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DocumentListCell", for:indexPath) as! DocumentListCell
+        guard let items = viewModel.responseService?[indexPath.row] else { return cell }
+        cell.configure(for: items)
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ApplicationDetailPageVC") as! ApplicationDetailPageVC
+        vc.viewModel.document = viewModel.responseService?[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
 
+    }
     private func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewModel.filteredData[section].documentName
+        viewModel.filteredData[section].documentName
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView.init(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 50))
@@ -75,50 +68,21 @@ extension ApplicationListPageVC : UITableViewDelegate,UITableViewDataSource {
         return headerView
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+         50
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+         100
     }
 }
 
 
 extension ApplicationListPageVC : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//
-//        viewModel.filteredData = searchText.isEmpty ? viewModel.documentsResponse : viewModel.documentsResponse.filter { (service: Documents) -> Bool in
-//
-//            if let name = service.documentName,
-//                let searchText = self.searchBar.text?.lowercased() {
-//                return name.lowercased().contains(searchText)
-//            } else {
-//                return false
-//            }
-//        }
-
-        viewModel.filteredData = searchText.isEmpty ? viewModel.documentsResponse : viewModel.documentsResponse.filter { (document: Documents) -> Bool in
-
-            if let name = document.documentModelName,
-                let searchText = self.searchBar.text?.lowercased() {
-                let a = name.filter { (service2: String) -> Bool in
-                    return service2.lowercased().contains(searchText)
-                }
-//                if  viewModel.filteredData.count != 0 {
-//                    for i in 0...viewModel.filteredData.count - 1 {
-//                        viewModel.dataCopy[i].documentModelName = viewModel.filteredData[i].documentModelName?.filter { (service2: String) -> Bool in
-//                            return service2.lowercased().contains(searchText)
-//                        }
-//                    }
-//                }
-                if a.isEmpty{
-                    return false
-                } else {
-                    return true
-                }
-            } else {
-                return false
-            }
-        }
-        tableView.reloadData()
+        guard let text = searchBar.text else { return }
+        viewModel.searchContent(term: text, completion: {
+            self.tableView.reloadData()
+        })
+        
     }
 }
+

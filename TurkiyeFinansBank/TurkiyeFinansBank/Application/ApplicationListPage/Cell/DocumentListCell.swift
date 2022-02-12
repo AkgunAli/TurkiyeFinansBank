@@ -24,5 +24,13 @@ class DocumentListCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    func configure(for content:ContentModel){
+        if let imageUrl = URL(string: content.artworkUrl100 ?? "") {
+            documentImage.kf.setImage(with: imageUrl, placeholder: #imageLiteral(resourceName: "singer-bg"))
+        }
+        artistName.text = content.artistName
+        artistType.text = content.wrapperType
+        artistKind.text = content.kind
+    }
     
 }

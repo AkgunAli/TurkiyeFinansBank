@@ -6,24 +6,32 @@
 //
 
 import UIKit
+import Kingfisher
+
 
 class ApplicationDetailPageVC: UIViewController {
+    let viewModel = ApplicationDetailPageVM()
+    @IBOutlet weak var documentImage: UIImageView!
+    @IBOutlet weak var documentName: UILabel!
+    @IBOutlet weak var documentKind: UILabel!
+    @IBOutlet weak var documentWrapperType: UILabel!
+    @IBOutlet weak var documentInformation: UILabel!
+    @IBOutlet weak var documentTrackName: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setUI() {
+        if let imageUrl = URL(string: viewModel.document?.artworkUrl100 ?? "") {
+            documentImage.kf.setImage(with: imageUrl, placeholder: #imageLiteral(resourceName: "singer-bg"))
+        }
+        documentName.text = viewModel.document?.artistName
+        documentKind.text =  viewModel.document?.kind
+        documentWrapperType.text = viewModel.document?.wrapperType
+        documentInformation.text = viewModel.document?.collectionName
+        documentTrackName.text = viewModel.document?.trackName
+        
     }
-    */
-
 }
