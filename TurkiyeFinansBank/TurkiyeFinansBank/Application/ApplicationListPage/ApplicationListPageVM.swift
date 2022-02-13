@@ -30,7 +30,8 @@ class ApplicationListPageVM {
     var filteredData: [Documents]!
     var dataCopy = [Documents]()
     var responseService : [ContentModel]?
-    var limitCount: Int = 25
+    var limitCount: Int = 10
+    var isLoadingList : Bool = false
     var wrapperTypeArray : [String]?
     init() {
     }
@@ -41,9 +42,8 @@ class ApplicationListPageVM {
             self?.responseService = data
             for item in data {
                 self?.wrapperTypeArray?.appendIfNotContains(item.wrapperType ?? "")
-                
+                self?.responseService?.append(item)
             }
-            self?.documentsResponse.removeAll()
             for (index, element) in data.enumerated() {
                 if index == 0 {
                     self?.documentsResponse.append(Documents(documentName: element.wrapperType ?? "",documentModelName: element.artistName ?? ""))

@@ -100,8 +100,6 @@ class API: SessionDelegate {
                                statusCode: response.response?.statusCode,
                                url: response.request?.description,
                                time: Date().timeIntervalSince1970 - start)
-            print("response.result",response.result)
-
                 switch response.result {
                 case .success:
                     switch self.statusType((response.response?.statusCode)!) {
@@ -124,13 +122,10 @@ class API: SessionDelegate {
                                                             succeed: @escaping (S) -> Void) {
         dataRequest.responseObject { (response: DataResponse<S, AFError>) in
             if let responseObject = response.value {
-                print("responseObject",responseObject.toJSON())
                 succeed(responseObject)
             } else {
                 let emptyResponse = S(JSON: [:])
                 if let emptyResponse = emptyResponse {
-                    print("emptyResponse",emptyResponse)
-
                     succeed(emptyResponse)
                 }
             }

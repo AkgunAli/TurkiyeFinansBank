@@ -8,5 +8,5 @@
 import Foundation
 class ApplicationDetailPageVM {
     var document : ContentModel?
-
+    let title = "Component Detail Page"
 }

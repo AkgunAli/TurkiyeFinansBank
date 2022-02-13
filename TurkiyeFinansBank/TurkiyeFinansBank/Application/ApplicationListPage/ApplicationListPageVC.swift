@@ -27,6 +27,7 @@ class ApplicationListPageVC: UIViewController {
     }
 }
 
+// MARK:  UITableViewDelegate,UITableViewDataSource
 
 extension ApplicationListPageVC : UITableViewDelegate,UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -75,14 +76,39 @@ extension ApplicationListPageVC : UITableViewDelegate,UITableViewDataSource {
     }
 }
 
+// MARK: UISearchBarDelegate
 
 extension ApplicationListPageVC : UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard let text = searchBar.text else { return }
+        self.viewModel.documentsResponse.removeAll()
         viewModel.searchContent(term: text, completion: {
             self.tableView.reloadData()
         })
         
+    }
+}
+
+// MARK: Pagination
+
+
+extension ApplicationListPageVC {
+    func getListFromServer(){
+        self.viewModel.isLoadingList = false
+        self.tableView.reloadData()
+    }
+    func loadMoreItemsForList(){
+        guard let text = searchBar.text else { return }
+        self.viewModel.limitCount += 10
+        viewModel.searchContent(term: text, completion: {
+            self.getListFromServer()
+        })
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (((scrollView.contentOffset.y + scrollView.frame.size.height) > scrollView.contentSize.height ) && !viewModel.isLoadingList){
+            self.viewModel.isLoadingList = true
+            self.loadMoreItemsForList()
+        }
     }
 }
 
